@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link href="https://db.onlinewebfonts.com/c/4c4a87973ef80fc72049e01b9085fadc?family=ABC+Diatype" rel="stylesheet">
+
+  
+  <!-- Título y descripción SEO -->
+  <title>UI/UX.mx en 2 semanas — Tú imaginas, nosotros diseñamos.</title>
+  <meta name="description" content="Descubre cómo convertimos tu idea en realidad en menos de 2 semanas con 10 pantallas, un prototipo navegable y una guía de estilos.">
+
+  <!-- Robots y canonical -->
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://uiux.mx/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="UI/UX.mx en 2 semanas — Tú imaginas, nosotros diseñamos.">
+  <meta property="og:description" content="Descubre cómo convertimos tu idea en realidad en menos de 2 semanas con 10 pantallas, un prototipo navegable y una guía de estilos.">
+  <meta property="og:image" content="img/og-image.jpg">
+  <meta property="og:url" content="https://uiux.mx/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="UI/UX.mx en 2 semanas — Tú imaginas, nosotros diseñamos.">
+  <meta name="twitter:description" content="Descubre cómo convertimos tu idea en realidad en menos de 2 semanas con 10 pantallas, un prototipo navegable y una guía de estilos.">
+  <meta name="twitter:image" content="img/twitter-image.jpg">
+  
+  <!-- Aquí puedes agregar otros meta tags como author, keywords, etc. -->
+  
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Scroll reveal: cada elemento con clase .reveal se animará individualmente */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Reset y estilos generales */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    body {
+      font-family: "ABC Diatype", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: white;
+      color: #111;
+      font-weight: 500;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @font-face{
+    font-family: "ABC Diatype";
+    src: url("https://db.onlinewebfonts.com/c/4c4a87973ef80fc72049e01b9085fadc?family=ABC+Diatype/4c4a87973ef80fc72049e01b9085fadc.eot");
+    src: url("https://db.onlinewebfonts.com/c/4c4a87973ef80fc72049e01b9085fadc?family=ABC+Diatype/4c4a87973ef80fc72049e01b9085fadc.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/c/4c4a87973ef80fc72049e01b9085fadc?family=ABC+Diatype/4c4a87973ef80fc72049e01b9085fadc.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/c/4c4a87973ef80fc72049e01b9085fadc?family=ABC+Diatype/4c4a87973ef80fc72049e01b9085fadc.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/c/4c4a87973ef80fc72049e01b9085fadc?family=ABC+Diatype/4c4a87973ef80fc72049e01b9085fadc.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/c/4c4a87973ef80fc72049e01b9085fadc?family=ABC+Diatype/4c4a87973ef80fc72049e01b9085fadc.svg#ABC Diatype")format("svg");
+    font-weight: 500;
+    font-style:normal;
+    font-display:swap;
+    }
+
+    /* Container para desktop */
+    .container {
+      width: 675px;
+      max-width: 100%;
+      margin: auto;
+    }
+    /* Secciones generales */
+    section {
+      width: 100%;
+      margin-bottom: 120px;
+    }
+    /* Navbar y Footer (Desktop: se extienden a full width) */
+    .navbar,
+    .footer {
+      padding: 30px;
+      margin-bottom: 60px;
+      margin-left: -30px;
+      margin-right: -30px;
+      width: calc(100% + 60px);
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100px;
+    }
+    .navbar img {
+      width: 80px;
+      height: 40px;
+    }
+    .navbar button {
+      background: black;
+      color: white;
+      font: inherit;
+      border: none;
+      border-radius: 20px;
+      padding: 0 15px;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+      height: 40px;
+    }
+    .navbar button:hover {
+      opacity: 0.6;
+    }
+    /* Hero y About: se eliminó el padding vertical */
+    .hero,
+    .about {
+      text-align: left;
+      padding: 0;
+    }
+    .hero h1,
+    .about h1 {
+      font-size: 26px;
+      line-height: 32px;
+      font-weight: 500;
+      max-width: 675px;
+      margin-bottom: 30px;
+    }
+    .hero h1 span,
+    .about h1 span {
+      color: #7D7D7D;
+    }
+    /* Botones y enlaces en Hero y About */
+    .hero button,
+    .hero a,
+    .about a {
+      background: #EEE;
+      color: #111;
+      font: inherit;
+      border: none;
+      border-radius: 20px;
+      padding: 0 15px;
+      height: 40px;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero button:hover,
+    .hero a:hover,
+    .about a:hover {
+      opacity: 0.6;
+    }
+    /* Slider */
+    .slider {
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden; /* Oculta scroll vertical */
+      white-space: nowrap;
+      scroll-behavior: smooth;
+      padding-bottom: 20px;
+      -ms-overflow-style: none; /* IE y Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+    .slider::-webkit-scrollbar {
+      display: none;
+    }
+    .slider-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px; /* Separación entre imágenes */
+      scroll-snap-type: x mandatory;
+      margin-left: 30px; /* 30px de margen izquierdo */
+    }
+    /* Pseudo-elemento para asegurar espacio al final (opcional) */
+    .slider-container::after {
+      content: "";
+      display: inline-block;
+      width: 30px;
+      flex-shrink: 0;
+    }
+    .slide {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: left; /* La descripción se alinea a la izquierda */
+      scroll-snap-align: start;
+      min-width: fit-content;
+    }
+    /* Contenedor de imagen con altura fija y esquinas redondeadas */
+    .slide-image {
+      height: 600px; /* Altura fija en desktop */
+      width: auto;
+      background-color: #EEE; /* Placeholder */
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    .slide-image img {
+      border-radius: 15px;
+      border: 1px solid #EEE;
+      display: block;
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+    .slide p {
+      width: 100%; /* Ocupa todo el ancho para alinear a la izquierda */
+      font-size: 13px;
+      line-height: 20px;
+      color: #7d7d7d;
+      margin-top: 15px;
+      text-align: left;
+    }
+    /* Ajustes para móviles en el slider */
+    @media (max-width: 768px) {
+      .slide-image {
+        height: 400px; /* Altura fija en móvil */
+      }
+    }
+    /* Footer (Desktop) */
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #7d7d7d;
+    }
+    .footer a {
+      color: #111;
+      text-decoration: underline;
+      transition: opacity 0.3s ease;
+    }
+    .footer a:hover {
+      opacity: 0.6;
+    }
+    /* FAQ Accordion Component */
+    .faqs {
+      width: 100%;
+    }
+    .faq-item {
+      background: #fff;
+      border: 1px solid #DDD;
+      padding: 30px;
+      margin-bottom: 15px;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+    .faq-item:hover {
+      opacity: 0.6;
+    }
+    .faq-item.open:hover {
+      opacity: 1;
+    }
+    .faq-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .faq-header h2 {
+      font-size: 20px;
+      line-height: 30px;
+      font-weight: 500;
+      color: #111;
+      margin: 0;
+      margin-right: 30px; /* Espacio para que el texto no toque el icono */
+    }
+    .faq-icon {
+      width: 30px;
+      height: 30px;
+      position: relative;
+    }
+    .faq-icon svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform-origin: center;
+    }
+    .faq-icon .icon-plus {
+      opacity: 1;
+    }
+    .faq-icon .icon-minus {
+      opacity: 0;
+    }
+    .faq-item.open .faq-icon .icon-plus {
+      opacity: 0;
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+    .faq-item.open .faq-icon .icon-minus {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.5s ease, opacity 0.5s ease, margin-top 0.5s ease;
+      color: #7d7d7d;
+      font-size: 20px;
+      line-height: 30px;
+      font-weight: 500;
+      margin-top: 0;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      opacity: 1;
+      margin-top: 15px;
+    }
+    .faq-footer {
+      text-align: center;
+      color: #7d7d7d;
+      margin-top: 60px;
+      font-size: 20px;
+      line-height: 30px;
+      font-weight: 500;
+    }
+    .faq-footer a {
+      color: #111;
+      text-decoration: underline;
+      transition: opacity 0.3s ease;
+    }
+    .faq-footer a:hover {
+      opacity: 0.6;
+    }
+    /* Media Query para móvil */
+    @media (max-width: 768px) {
+      .container {
+        width: 100%;
+        padding: 0 30px;
+      }
+      section {
+        margin-bottom: 60px;
+      }
+      .navbar, .footer {
+        margin: 0;
+        width: 100%;
+        padding: 30px 0;
+      }
+      .hero, .about {
+        padding: 30px 0;
+      }
+      .slider {
+        flex-direction: column;
+        margin-bottom: 120px;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Navbar -->
+    <div class="navbar reveal">
+      <img src="img/logo.svg" alt="Logo">
+    <a href="https://calendly.com/uiuxmx/tuproyectouiux" target="_blank" rel="noopener noreferrer">
+        <button>Contratar</button>
+    </a>
+    </div>
+    <!-- Hero -->
+    <section class="hero reveal">
+      <h1>
+        ¿Tienes una idea para un producto digital? En menos de 2 semanas, la convertimos en realidad:
+        <span>10 pantallas, un prototipo navegable y una guía de estilos.</span>
+      </h1>
+      <!-- Botón convertido en enlace ancla que hace scroll a FAQs -->
+      <a href="#faqs">Preguntas frecuentes</a>
+    </section>
+  </div>
+  <!-- Slider -->
+  <section class="slider reveal">
+    <div class="slider-container">
+      <div class="slide">
+        <div class="slide-image">
+          <img src="img/work/met-1.jpg" alt="Met">
+        </div>
+        <p>Met — Pro</p>
+      </div>
+      <div class="slide">
+        <div class="slide-image">
+          <img src="img/work/mockupsd-1.jpg" alt="Mockupsd">
+        </div>
+        <p>Mockupsd — Inicio</p>
+      </div>
+      <div class="slide">
+        <div class="slide-image">
+          <img src="img/work/dribbble-1.jpg" alt="Dribbble">
+        </div>
+        <p>Dribbble — Explorar</p>
+      </div>
+      <div class="slide">
+        <div class="slide-image">
+          <img src="img/work/paguitos-1.jpg" alt="Paguitos">
+        </div>
+        <p>Paguitos — Paguito</p>
+      </div>
+      <div class="slide">
+        <div class="slide-image">
+          <img src="img/work/artisian-1.jpg" alt="Artisian">
+        </div>
+        <p>Artisian — Mac App</p>
+      </div>
+      <div class="slide">
+        <div class="slide-image">
+          <img src="img/work/galo-2.jpg" alt="Galo">
+        </div>
+        <p>Galo — Intercambios</p>
+      </div>
+      <div class="slide">
+        <div class="slide-image">
+          <img src="img/work/met-3.jpg" alt="Met">
+        </div>
+        <p>Met — Explorar</p>
+      </div>
+      <div class="slide">
+        <div class="slide-image">
+          <img src="img/work/mockupsd-2.jpg" alt="Mockupsd">
+        </div>
+        <p>Mockupsd — Tienda</p>
+      </div>
+      <div class="slide">
+        <div class="slide-image">
+          <img src="img/work/paguitos-2.jpg" alt="Paguitos">
+        </div>
+        <p>Paguitos — Modal</p>
+      </div>
+      <div class="slide">
+        <div class="slide-image">
+          <img src="img/work/konargo-1.jpg" alt="Konargo">
+        </div>
+        <p>Konargo — Usuarios</p>
+      </div>
+      <div class="slide">
+        <div class="slide-image">
+          <img src="img/work/galo-1.jpg" alt="Galo">
+        </div>
+        <p>Galo — Perfil</p>
+      </div>
+      <div class="slide">
+        <div class="slide-image">
+          <img src="img/work/mockupsd-3.jpg" alt="Mockupsd">
+        </div>
+        <p>Mockupsd — Ordenes</p>
+      </div>
+      <div class="slide">
+        <div class="slide-image">
+          <img src="img/work/met-2.jpg" alt="Met">
+        </div>
+        <p>Met — Temas de interes</p>
+      </div>
+      <div class="slide">
+        <div class="slide-image">
+          <img src="img/work/paguitos-3.jpg" alt="Paguitos">
+        </div>
+        <p>Paguitos — Movimientos</p>
+      </div>
+      <div class="slide">
+        <div class="slide-image">
+          <img src="" alt="">
+        </div>
+        <p></p>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <!-- FAQ Accordion: Se asigna id="faqs" para poder hacer scroll -->
+    <section id="faqs" class="faqs reveal">
+      <!-- FAQ 1 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <h2>¿Qué incluye el servicio?</h2>
+          <div class="faq-icon">
+            <svg class="icon-plus" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 9C16 8.44772 15.5523 8 15 8C14.4477 8 14 8.44772 14 9V14H9C8.44771 14 8 14.4477 8 15C8 15.5523 8.44771 16 9 16H14V21C14 21.4477 14.4477 22 15 22C15.5523 22 16 21.4477 16 21V16H21C21.5523 16 22 15.4477 22 15C22 14.4477 21.5523 14 21 14H16V9Z" fill="#101010"/>
+            </svg>
+            <svg class="icon-minus" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M22 15C22 15.5523 21.5523 16 21 16L9 16C8.44771 16 8 15.5523 8 15C8 14.4477 8.44771 14 9 14L21 14C21.5523 14 22 14.4477 22 15Z" fill="#101010"/>
+            </svg>
+          </div>
+        </div>
+        <h2 class="faq-answer">Este servicio es solo para diseño de interfaces de usuario (UI). No incluye landing pages, branding o ilustraciones. Recibirás 10 pantallas diseñadas a medida, un prototipo navegable en Figma y una guía de estilos con colores, tipografías y elementos clave.</h2>
+      </div>
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <h2>¿Cuánto cuesta el servicio?</h2>
+          <div class="faq-icon">
+            <svg class="icon-plus" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 9C16 8.44772 15.5523 8 15 8C14.4477 8 14 8.44772 14 9V14H9C8.44771 14 8 14.4477 8 15C8 15.5523 8.44771 16 9 16H14V21C14 21.4477 14.4477 22 15 22C15.5523 22 16 21.4477 16 21V16H21C21.5523 16 22 15.4477 22 15C22 14.4477 21.5523 14 21 14H16V9Z" fill="#101010"/>
+            </svg>
+            <svg class="icon-minus" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M22 15C22 15.5523 21.5523 16 21 16L9 16C8.44771 16 8 15.5523 8 15C8 14.4477 8.44771 14 9 14L21 14C21.5523 14 22 14.4477 22 15Z" fill="#101010"/>
+            </svg>
+          </div>
+        </div>
+        <h2 class="faq-answer">El costo es de $35,000 MXN (aprox. $1,750 USD) en un solo pago. La llamada inicial define el alcance, y si necesitas más pantallas o ajustes, el precio se modifica. No hay reembolsos.</h2>
+      </div>
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <h2>¿Cuál es el tiempo de entrega?</h2>
+          <div class="faq-icon">
+            <svg class="icon-plus" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 9C16 8.44772 15.5523 8 15 8C14.4477 8 14 8.44772 14 9V14H9C8.44771 14 8 14.4477 8 15C8 15.5523 8.44771 16 9 16H14V21C14 21.4477 14.4477 22 15 22C15.5523 22 16 21.4477 16 21V16H21C21.5523 16 22 15.4477 22 15C22 14.4477 21.5523 14 21 14H16V9Z" fill="#101010"/>
+            </svg>
+            <svg class="icon-minus" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M22 15C22 15.5523 21.5523 16 21 16L9 16C8.44771 16 8 15.5523 8 15C8 14.4477 8.44771 14 9 14L21 14C21.5523 14 22 14.4477 22 15Z" fill="#101010"/>
+            </svg>
+          </div>
+        </div>
+        <h2 class="faq-answer">El diseño se entrega en 15 días naturales. No se trabaja en fines de semana. Si el cliente retrasa el feedback y se excede el plazo, se cobrará un extra.</h2>
+      </div>
+      <!-- FAQ 4 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <h2>¿Cómo funciona el feedback y las revisiones??</h2>
+          <div class="faq-icon">
+            <svg class="icon-plus" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 9C16 8.44772 15.5523 8 15 8C14.4477 8 14 8.44772 14 9V14H9C8.44771 14 8 14.4477 8 15C8 15.5523 8.44771 16 9 16H14V21C14 21.4477 14.4477 22 15 22C15.5523 22 16 21.4477 16 21V16H21C21.5523 16 22 15.4477 22 15C22 14.4477 21.5523 14 21 14H16V9Z" fill="#101010"/>
+            </svg>
+            <svg class="icon-minus" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M22 15C22 15.5523 21.5523 16 21 16L9 16C8.44771 16 8 15.5523 8 15C8 14.4477 8.44771 14 9 14L21 14C21.5523 14 22 14.4477 22 15Z" fill="#101010"/>
+            </svg>
+          </div>
+        </div>
+        <h2 class="faq-answer">Los comentarios se dejan en el archivo de Figma. Hay una llamada en la primera semana para seguimiento y otra en la segunda para la entrega. La comunicación es por WhatsApp. Ajustes dentro del alcance están incluidos, cambios grandes tienen costo adicional.</h2>
+      </div>
+      <!-- FAQ 5 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <h2>¿Para quién es este servicio?</h2>
+          <div class="faq-icon">
+            <svg class="icon-plus" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 9C16 8.44772 15.5523 8 15 8C14.4477 8 14 8.44772 14 9V14H9C8.44771 14 8 14.4477 8 15C8 15.5523 8.44771 16 9 16H14V21C14 21.4477 14.4477 22 15 22C15.5523 22 16 21.4477 16 21V16H21C21.5523 16 22 15.4477 22 15C22 14.4477 21.5523 14 21 14H16V9Z" fill="#101010"/>
+            </svg>
+            <svg class="icon-minus" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M22 15C22 15.5523 21.5523 16 21 16L9 16C8.44771 16 8 15.5523 8 15C8 14.4477 8.44771 14 9 14L21 14C21.5523 14 22 14.4477 22 15Z" fill="#101010"/>
+            </svg>
+          </div>
+        </div>
+        <h2 class="faq-answer">Para cualquier persona con una idea que necesite un diseño profesional: emprendedores, trabajadores con proyectos internos o estudiantes que quieren validar una propuesta. No necesitas experiencia en diseño o desarrollo.</h2>
+      </div>
+      <!-- Texto final con link -->
+      <h2 class="faq-footer">¿Aún tienes preguntas?<br><a href="https://calendly.com/uiuxmx/tuproyectouiux" target="_blank" rel="noopener noreferrer">Agenda una llamada</a></h>
+    </section>
+    <!-- About -->
+    <section class="about reveal">
+      <h1>
+        Con más de 15 años de experiencia diseñando apps móviles y web en sectores como fintech, e-commerce, salud, educación y tecnología,
+        <span>enfocándonos en lo visual y estratégico para que puedas validar tu idea sin preocuparte por la parte técnica.</span>
+      </h1>
+      <a href="https://www.figma.com/design/H9WRxrISFuV4JR0flDF6ep/MET-%E2%80%94-UIUX?node-id=58-158&t=wHB8g1fO7RmXPklo-1" target="_blank" rel="noopener">Ver ejemplo</a>
+    </section>
+    <!-- Footer -->
+    <footer class="footer reveal">
+      <span>© 2025</span>
+      <a href="https://www.instagram.com/uiux.mx" target="_blank" rel="noopener">Instagram</a>
+    </footer>
+  </div>
+  
+  <!-- Script para la funcionalidad del acordeón en FAQs (sin funcionalidad de drag en el slider) -->
+  <script>
+    // Al cargar la página, forzamos el scroll a la parte superior.
+    window.addEventListener("load", function() {
+      window.scrollTo(0, 0);
+    });
+    
+    document.querySelectorAll('.faq-item').forEach(function(item) {
+      item.addEventListener('click', function() {
+        item.classList.toggle('open');
+      });
+    });
+    
+    // Scroll reveal: cada elemento con clase .reveal se activa cuando entra en el viewport.
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        } else {
+          entry.target.classList.remove('active');
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(element => {
+      revealObserver.observe(element);
+    });
+  </script>
+</body>
+</html>
