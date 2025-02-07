@@ -223,12 +223,6 @@
       .slide-image {
         height: 400px; /* Altura fija en móvil */
       }
-    @media (max-width: 768px) {
-      .slide p {
-       font-size: 11px; /* Ajusta según tus necesidades */
-        line-height: 18px;
-       }
-      }
     }
     /* Footer (Desktop) */
     .footer {
@@ -355,8 +349,12 @@
       }
       .slider {
         flex-direction: column;
-        margin-bottom: 120px;
+        margin-bottom: 90px;
         padding: 0;
+      }
+      .slide p {
+        font-size: 11px; /* Ajusta según tus necesidades */
+        line-height: 18px;
       }
     }
   </style>
@@ -403,7 +401,7 @@
       </div>
       <div class="slide">
         <div class="slide-image">
-          <img sloading="lazy" rc="img/work/paguitos-1.jpg" alt="Paguitos">
+          <img loading="lazy" src="img/work/paguitos-1.jpg" alt="Paguitos">
         </div>
         <p>Paguitos — Paguito</p>
       </div>
